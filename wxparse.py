@@ -4,8 +4,8 @@
 import sys
 
 def LoadData(fileLines, headers):
-    print 'Loading data...'
-    print 'There are ' + str(len(fileLines)) + ' lines to be read.'
+    print('Loading data...')
+    print('There are ' + str(len(fileLines)) + ' lines to be read.')
 
     arrayOfDays = []
     for ln in fileLines:
@@ -15,7 +15,7 @@ def LoadData(fileLines, headers):
             for split in splitList:
                 day.append(split)
             arrayOfDays.append(day)
-    print 'Done!'
+    print('Done!')
 
     return arrayOfDays
 
@@ -23,12 +23,12 @@ def main(filename):
     file = open(filename, 'r')
     fileLines = file.read().split('\n')
     lstHeader = fileLines[0].split(',')
-    print 'There are ' + str(len(lstHeader)) + ' headers.'
+    print('There are ' + str(len(lstHeader)) + ' headers.')
 
     wxData = LoadData(fileLines, lstHeader)
     invalidInput = True
     while invalidInput:
-        queryType = raw_input('Select type of query: (D)ay, (S)ingle,')
+        queryType = input('Select type of query: (D)ay, (S)ingle,')
         if(queryType == 'd' or queryType == "D"):
             invalidInput = False
             #Do more day query stuff
